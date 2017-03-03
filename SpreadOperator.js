@@ -1,13 +1,12 @@
 // Spread operator (...) changes Array to CSV
 
-function log(level, ...args){
-    if(level === 'debug'){
-        console.log(args);
-    }
+function log(...args){
+    console.log(args);
 }
 
-var foo = {bar:'baz'}
-var obj = [{a:'a'},{b:'b'}]
-obj = [foo, ...obj] //this will just concat foo and obj together.
+var arr = [3,{name:'ade'},5,7,[5,[4,5],],8];
 
-log('debug',...obj);
+var arr1 = arr[3];
+//result should be  [3,{name:”ade”},5,7,5,4,5,8]
+
+log(...arr);
